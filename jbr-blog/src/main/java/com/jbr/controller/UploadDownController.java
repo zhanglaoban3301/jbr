@@ -36,8 +36,8 @@ public class UploadDownController {
         return RespBean.success("上传成功",uploadService.uploadImg(fileList, request));
     }
     @GetMapping("/deleteImg")
-    public RespBean deleteImg(@RequestBody Map<String,Object> map){
-        String path = (String)map.get("path");
+    public RespBean deleteImg(@RequestParam String path){
+
         System.out.println("path:::"+path);
         boolean b = uploadService.deleteImg(path);
         if(b){
