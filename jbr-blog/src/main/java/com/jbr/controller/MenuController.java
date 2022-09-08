@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/system/cfg")
+
 public class MenuController {
     @Autowired
     private UserService userService;
     @ApiOperation(value = "通过账号查询菜单列表")
-    @GetMapping("/meun")
+    @GetMapping("/menu")
     public List<Menu> getMenuByName(){
         return userService.getMenuByName();
     }

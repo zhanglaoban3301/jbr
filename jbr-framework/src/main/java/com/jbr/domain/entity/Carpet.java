@@ -40,6 +40,7 @@ public class Carpet  {
     
     private Date selltime;
 
+    private String img;
 
 
 
