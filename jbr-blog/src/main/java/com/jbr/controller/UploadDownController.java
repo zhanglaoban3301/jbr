@@ -31,14 +31,13 @@ public class UploadDownController {
 
     @PostMapping("/upload")
     public RespBean uploadImg(@RequestParam("file") List<MultipartFile> fileList, HttpServletRequest request) {
-        System.out.println("fileList"+fileList);
-        System.out.println("request"+request);
+
         return RespBean.success("上传成功",uploadService.uploadImg(fileList, request));
     }
     @GetMapping("/deleteImg")
     public RespBean deleteImg(@RequestParam String path){
 
-        System.out.println("path:::"+path);
+
         boolean b = uploadService.deleteImg(path);
         if(b){
             return RespBean.success("删除图片成功");

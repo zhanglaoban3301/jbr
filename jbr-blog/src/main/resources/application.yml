@@ -48,4 +48,4 @@ jwt:
 
 file_upload_path: D://img/
 com.test.base_picture_url: http://localhost:7777/image/
-
+pageSize: 10
