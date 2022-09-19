@@ -51,4 +51,14 @@ public class CarpetServiceImpl implements CarpetService {
     public int detelecarpet(int id) {
         return carpetMapper.detelecarpet(id);
     }
+
+    @Override
+    public List<Carpet> searchcarpet(Carpet carpet) {
+        return carpetMapper.searchcarpet(carpet);
+    }
+
+    @Override
+    public Integer searchcarpetnum(Carpet carpet) {
+        return carpetMapper.searchcarpetnum(carpet);
+    }
 }

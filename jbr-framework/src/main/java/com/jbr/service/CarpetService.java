@@ -51,4 +51,18 @@ public interface CarpetService {
      * @return
      */
     int detelecarpet(int id);
+
+    /**
+     * 根据搜索条件搜索地毯
+     * @param carpet
+     * @return
+     */
+    List<Carpet> searchcarpet(Carpet carpet);
+
+    /**
+     * 根据搜索条件搜索地毯数量
+     * @param carpet
+     * @return
+     */
+    Integer searchcarpetnum(Carpet carpet);
 }

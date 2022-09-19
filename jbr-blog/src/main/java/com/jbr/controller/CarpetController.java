@@ -37,5 +37,13 @@ public class CarpetController {
     public RespBean Detelecarpet(int id){
         return RespBean.success("删除成功",carpetService.detelecarpet(id));
     }
+    @PostMapping("/searchcarpet")
+    public RespBean SearchCarpet(@RequestBody Carpet carpet){
+        HashMap map = new HashMap();
+        map.put("data",carpetService.searchcarpet(carpet));
+        map.put("total",carpetService.searchcarpetnum(carpet));
+        return RespBean.success("查询成功",map);
+    }
+
 
 }
