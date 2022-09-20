@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/jbr?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
-    password: 1234
+    password: 123
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -91,7 +91,7 @@ jwt:
   #jwt 负载中拿到开头
   tokenHead: Bearer
 
-## 设置debug可以打印Sql语句
+### 设置debug可以打印Sql语句
 logging:
   level:
     com:

@@ -1,5 +1,6 @@
 package com.jbr.service;
 
+import com.jbr.domain.entity.Batch;
 import com.jbr.domain.entity.Carpet;
 import com.jbr.domain.pojo.RespBean;
 
@@ -65,4 +66,18 @@ public interface CarpetService {
      * @return
      */
     Integer searchcarpetnum(Carpet carpet);
+
+    /**
+     * 更新地毯信息
+     * @param carpet
+     * @return
+     */
+    Integer updatecarpet(Carpet carpet);
+
+    /**
+     * 获取批次
+     * @param year
+     * @return
+     */
+    List<Batch> getbatch(String year);
 }

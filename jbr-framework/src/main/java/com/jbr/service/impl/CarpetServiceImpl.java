@@ -1,5 +1,6 @@
 package com.jbr.service.impl;
 
+import com.jbr.domain.entity.Batch;
 import com.jbr.domain.entity.Carpet;
 import com.jbr.mapper.CarpetMapper;
 import com.jbr.service.CarpetService;
@@ -39,7 +40,7 @@ public class CarpetServiceImpl implements CarpetService {
 
     @Override
     public List<Carpet> getcarpet(int page) {
-        return carpetMapper.getcarpet((page-1)*pageSize+1,pageSize*page);
+        return carpetMapper.getcarpet((page-1)*pageSize,pageSize*page);
     }
 
     @Override
@@ -60,5 +61,15 @@ public class CarpetServiceImpl implements CarpetService {
     @Override
     public Integer searchcarpetnum(Carpet carpet) {
         return carpetMapper.searchcarpetnum(carpet);
+    }
+
+    @Override
+    public Integer updatecarpet(Carpet carpet) {
+        return carpetMapper.updatecarpet(carpet);
+    }
+
+    @Override
+    public List<Batch> getbatch(String year) {
+        return carpetMapper.getBatch(year);
     }
 }

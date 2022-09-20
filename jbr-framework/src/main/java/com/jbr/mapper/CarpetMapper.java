@@ -1,10 +1,8 @@
 package com.jbr.mapper;
 
+import com.jbr.domain.entity.Batch;
 import com.jbr.domain.entity.Carpet;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -18,12 +16,18 @@ import java.util.List;
 public interface CarpetMapper {
     @Insert("insert into jbr.carpet(id,name,type,price,length,width,batch,entrytime,img) values(null,#{name},#{type},#{price},#{length},#{width},#{batch},#{entrytime},#{img}) ")
     int addcarpet(Carpet carpet);
-    @Select("select *,date_format( now(),'%Y-%m-%d' ) as time from jbr.carpet limit #{arg0},#{arg1}")
+    @Select("select * from jbr.carpet where 1=1 order by entrytime limit #{arg0},#{arg1}")
     List<Carpet> getcarpet(int page, int pageSize);
     @Select("select count(*) from jbr.carpet")
     Integer total();
-    @Delete("delete from jbr.carpet where id = #{id}")
+    @Delete("delete from jbr.carpet where id = #{id} ")
     int detelecarpet(int id);
+    @Update("update jbr.carpet set name = #{name},type=#{type}," +
+            "entrytime=#{entrytime},price=#{price},batch=#{batch},length=#{length},width=#{width}" +
+            "where id = #{id}")
+    Integer updatecarpet(Carpet carpet);
+
+
     @Select("<script>" +
             "select * from  jbr.carpet where 1=1" +
             "<if test= 'name!=null'  >" +
@@ -58,4 +62,6 @@ public interface CarpetMapper {
             "</script>"
     )
     Integer searchcarpetnum(Carpet carpet);
+    @Select("select * from jbr.batch where year = #{arg0} order by id")
+    List<Batch> getBatch(String year);
 }
