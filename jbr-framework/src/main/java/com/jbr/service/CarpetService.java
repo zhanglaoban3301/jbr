@@ -1,6 +1,7 @@
 package com.jbr.service;
 
 import com.jbr.domain.entity.Carpet;
+import com.jbr.domain.pojo.RespBean;
 
 import java.util.List;
 
@@ -32,9 +33,36 @@ public interface CarpetService {
     public int deletecarpet(Integer id);
 
     /**
-     * 根据页数查地毯
+     * 分页查询地毯列表
      * @param page
      * @return
      */
-    public List<Carpet> getCarpetByPage(int page);
+    List<Carpet> getcarpet(int page);
+
+    /**
+     * 查询地毯总数
+     * @return
+     */
+    Integer total();
+
+    /**
+     * 根据id删除地毯数据
+     * @param id
+     * @return
+     */
+    int detelecarpet(int id);
+
+    /**
+     * 根据搜索条件搜索地毯
+     * @param carpet
+     * @return
+     */
+    List<Carpet> searchcarpet(Carpet carpet);
+
+    /**
+     * 根据搜索条件搜索地毯数量
+     * @param carpet
+     * @return
+     */
+    Integer searchcarpetnum(Carpet carpet);
 }

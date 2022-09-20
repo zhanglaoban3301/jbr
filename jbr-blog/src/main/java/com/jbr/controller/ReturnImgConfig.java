@@ -16,15 +16,20 @@ import java.io.*;
 
 @RestController
 public class ReturnImgConfig {
-    private String path = "D://img/20220908151905im_01.jpg";
+
     @Resource
     private HttpServletResponse response;
     @GetMapping(value="/retimg" ,produces = "image/jpeg")
-    public void getImage() throws IOException {
+    public void getImage(String path) throws IOException {
         OutputStream os = null;
         try {
-//        读取图片
-            BufferedImage image = ImageIO.read(new FileInputStream(new File(path)));
+            BufferedImage image = null;
+            //读取图片
+            try{
+                image = ImageIO.read(new FileInputStream(new File(path)));
+            }catch(Exception e){
+                System.out.println("没有读取到在"+path+"位置上的图片");
+            }
             response.setContentType("image/jpeg");
             os = response.getOutputStream();
             if (image != null) {
