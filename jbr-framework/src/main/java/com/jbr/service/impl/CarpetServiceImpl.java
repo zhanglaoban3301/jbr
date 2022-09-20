@@ -72,4 +72,14 @@ public class CarpetServiceImpl implements CarpetService {
     public List<Batch> getbatch(String year) {
         return carpetMapper.getBatch(year);
     }
+
+    @Override
+    public List<Carpet> getcarpetbybatch(int page, String batch) {
+        return carpetMapper.getcarpetBybatch((page-1)*pageSize,pageSize*page,batch);
+    }
+
+    @Override
+    public Integer getcarpetnumbybatch(String batch) {
+        return carpetMapper.getcarpetnumBybatch(batch);
+    }
 }

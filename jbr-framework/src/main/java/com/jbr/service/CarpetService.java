@@ -80,4 +80,19 @@ public interface CarpetService {
      * @return
      */
     List<Batch> getbatch(String year);
+
+    /**
+     * 根据页数和批次查询地毯
+     * @param page
+     * @param batch
+     * @return
+     */
+    List<Carpet> getcarpetbybatch(int page,String batch);
+
+    /**
+     * 根据批次查询地毯数量
+     * @param batch
+     * @return
+     */
+    Integer getcarpetnumbybatch(String batch);
 }

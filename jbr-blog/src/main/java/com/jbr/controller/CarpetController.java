@@ -55,6 +55,13 @@ public class CarpetController {
     public RespBean UpdateCarpet(@RequestBody Carpet carpet){
         return RespBean.success("编辑数据成功",carpetService.updatecarpet(carpet));
     }
+    @GetMapping("/getcarpetbatch")
+    public RespBean Getcarpetbybatch(int page,String batch){
+        HashMap map = new HashMap();
+        map.put("data",carpetService.getcarpetbybatch(page,batch));
+        map.put("total",carpetService.getcarpetnumbybatch(batch));
+        return RespBean.success("查询成功",map);
 
+    }
 
 }

@@ -27,6 +27,10 @@ public interface CarpetMapper {
             "where id = #{id}")
     Integer updatecarpet(Carpet carpet);
 
+    @Select("select * from jbr.carpet where 1=1 and batch = #{arg2} order by entrytime limit #{arg0},#{arg1}")
+    List<Carpet> getcarpetBybatch(int page, int pageSize,String batch);
+    @Select("select count(*) from jbr.carpet where 1=1 and batch = #{batch} ")
+    Integer getcarpetnumBybatch(String batch);
 
     @Select("<script>" +
             "select * from  jbr.carpet where 1=1" +
@@ -64,4 +68,6 @@ public interface CarpetMapper {
     Integer searchcarpetnum(Carpet carpet);
     @Select("select * from jbr.batch where year = #{arg0} order by id")
     List<Batch> getBatch(String year);
+
+
 }
