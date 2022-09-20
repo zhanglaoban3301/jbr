@@ -23,5 +23,8 @@ public class CarpetController {
     public RespBean AddCarpet(@RequestBody Carpet carpet){
         return RespBean.success("添加成功",carpetService.addcarpet(carpet));
     }
-
+    @GetMapping("/getCarpetByPage")
+    public RespBean getCarpetByPage(Integer page){
+        return RespBean.success("查询成功",carpetService.getCarpetByPage(page));
+    }
 }

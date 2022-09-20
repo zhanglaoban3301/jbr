@@ -2,6 +2,8 @@ package com.jbr.service;
 
 import com.jbr.domain.entity.Carpet;
 
+import java.util.List;
+
 /**
  * @Author zxw
  * @Date 2022/9/8 21:22
@@ -28,4 +30,11 @@ public interface CarpetService {
      * @return
      */
     public int deletecarpet(Integer id);
+
+    /**
+     * 根据页数查地毯
+     * @param page
+     * @return
+     */
+    public List<Carpet> getCarpetByPage(int page);
 }

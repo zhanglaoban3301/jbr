@@ -3,6 +3,9 @@ package com.jbr.mapper;
 import com.jbr.domain.entity.Carpet;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @Author zxw
@@ -12,6 +15,9 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface CarpetMapper {
-    @Insert("insert into jbr.carpet(id,name,type,price,length,width,batch,entrytime,img) values(1,#{name},#{type},#{price},#{length},#{width},#{batch},#{entrytime},#{img}) ")
+    @Insert("insert into jbr.carpet(id,name,type,price,length,width,batch,entrytime,img) values(null,#{name},#{type},#{price},#{length},#{width},#{batch},#{entrytime},#{img}) ")
     public int addcarpet(Carpet carpet);
+
+    @Select("select * from jbr.carpet limit #{page},#{pageSize}")
+    public List<Carpet> getCarpetByPage(int page, int pageSize);
 }
