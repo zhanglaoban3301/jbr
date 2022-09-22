@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Carpet  {
     
-    private String id;
+    private int id;
     
     private String name;
     
@@ -42,7 +42,7 @@ public class Carpet  {
 
     private String img;
 
-
+    private String state;
 
 }
 

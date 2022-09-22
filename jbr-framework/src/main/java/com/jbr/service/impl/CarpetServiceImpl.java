@@ -82,4 +82,29 @@ public class CarpetServiceImpl implements CarpetService {
     public Integer getcarpetnumbybatch(String batch) {
         return carpetMapper.getcarpetnumBybatch(batch);
     }
+
+    @Override
+    public Integer sellCarpet(int id) {
+        return carpetMapper.sellCarpet(id);
+    }
+
+    @Override
+    public List<Carpet> getWsCarpet(int page) {
+        return carpetMapper.getWsCarpet((page-1)*pageSize,pageSize*page);
+    }
+
+    @Override
+    public Integer getWsCarpetNum() {
+        return carpetMapper.getWsCarpetNum();
+    }
+
+    @Override
+    public List<Carpet> getYsCarpet(int page) {
+        return carpetMapper.getYsCarpet((page-1)*pageSize,pageSize*page);
+    }
+
+    @Override
+    public Integer getYsCarpetNum() {
+        return carpetMapper.getYsCarpetNum();
+    }
 }

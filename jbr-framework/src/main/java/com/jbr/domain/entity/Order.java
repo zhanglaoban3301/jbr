@@ -24,7 +24,7 @@ public class Order  {
     
     private String batch;
     
-    private String type;
+    private int carpetid;
     
     private Double price;
     

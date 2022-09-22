@@ -95,4 +95,38 @@ public interface CarpetService {
      * @return
      */
     Integer getcarpetnumbybatch(String batch);
+
+    /**
+     * 售卖地毯
+     * @return
+     *  @param id
+     */
+    Integer sellCarpet(int id);
+
+    /**
+     * 分页查询未售地毯
+     * @param page
+     * @return
+     */
+    List<Carpet> getWsCarpet(int page);
+
+    /**
+     * 查询未售出地毯总数
+     * @return
+     */
+    Integer getWsCarpetNum();
+
+    /**
+     * 分页查询已售地毯
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    List<Carpet> getYsCarpet(int page);
+
+    /**
+     * 查询已售出地毯总数
+     * @return
+     */
+    Integer getYsCarpetNum();
 }

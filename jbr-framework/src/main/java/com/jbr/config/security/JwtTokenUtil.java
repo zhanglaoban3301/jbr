@@ -85,6 +85,7 @@ public class JwtTokenUtil {
     }
 
     private Date generateExpirationDate(){
+        System.out.println("过期期限"+expiration);
         return new Date(System.currentTimeMillis() + expiration );
     }
 
