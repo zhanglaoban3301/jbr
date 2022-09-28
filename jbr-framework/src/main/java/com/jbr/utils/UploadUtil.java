@@ -64,6 +64,10 @@ public class UploadUtil {
             String fileName = file.getOriginalFilename();
             //创建文件
             File dest = new File(dirPath+fileName);
+            if(dest.exists()){
+                urlMap.put("source",dirPath+fileName);
+                continue;
+            }
             //判断文件父目录是否存在
             if(!dest.getParentFile().exists()){
                 dest.getParentFile().mkdirs(); //这里因为创建的是多级目录，所以需要使用mkdirs()方法。使用mkdir()方法则文件夹创建不成功，会报找不到路径错误。

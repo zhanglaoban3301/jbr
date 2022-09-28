@@ -89,7 +89,7 @@ public interface CarpetMapper {
      */
     @Select("<script>" +
             "select * from  jbr.carpet where 1=1" +
-            "<if test= 'name!=null'  >" +
+            "<if test= 'name!=null  '  >" +
             "and name = #{name} "+
             "</if>" +
             "<if test= 'type!=null  '  >" +
@@ -98,7 +98,10 @@ public interface CarpetMapper {
             "<if test= 'batch!=null  ' >" +
             "and batch = #{batch}"+
             "</if>" +
-            "<if test= 'entrytime!=null ' >" +
+            "<if test= 'state!=null  ' >" +
+            "and state = #{state}"+
+            "</if>" +
+            "<if test= 'entrytime!=null  ' >" +
             "and entrytime = #{entrytime}"+
             "</if>" +
             "</script>"
@@ -112,7 +115,7 @@ public interface CarpetMapper {
      */
     @Select("<script>" +
             "select count(*) from  jbr.carpet where 1=1" +
-            "<if test= 'name!=null'  >" +
+            "<if test= 'name!=null '  >" +
             "and name = #{name} "+
             "</if>" +
             "<if test= 'type!=null  '  >" +
@@ -121,7 +124,10 @@ public interface CarpetMapper {
             "<if test= 'batch!=null  ' >" +
             "and batch = #{batch}"+
             "</if>" +
-            "<if test= 'entrytime!=null ' >" +
+            "<if test= 'state!=null  ' >" +
+            "and state = #{state}"+
+            "</if>" +
+            "<if test= 'entrytime!=null  ' >" +
             "and entrytime = #{entrytime}"+
             "</if>" +
             "</script>"

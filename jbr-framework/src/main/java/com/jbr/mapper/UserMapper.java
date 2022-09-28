@@ -23,13 +23,13 @@ public interface UserMapper {
      * @param username
      * @return
      */
-    @Select("select * from jbr.menu A    where A.role = (select role from jbr.accountno where username = #{username}) ")
+    @Select("select * from jbr.menu A    where A.role = (select role from jbr.accountno where username = #{username}) order by px ")
     public List<Menu> getMenuByName(String username);
     @Select("select * from jbr.menu")
     public List<Menu> getMenuAll();
-    @Select("select * from jbr.menu where id = #{id} and role = (select role from jbr.accountno where username = #{username}) " )
+    @Select("select * from jbr.menu where id = #{id} and role = (select role from jbr.accountno where username = #{username}) order by px " )
     public List<Menu> getMenuById(@Param("id") Integer id, @Param("username")String username);
 
-    @Select("select * from jbr.menu where parentid = #{id} and role = (select role from jbr.accountno where username = #{username})")
+    @Select("select * from jbr.menu where parentid = #{id} and role = (select role from jbr.accountno where username = #{username}) order by px")
     public List<Menu> getChildrenMenuById(@Param("id")Integer id,@Param("username")String username);
 }

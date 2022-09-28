@@ -1,11 +1,10 @@
 /**
  * @author : zxw
- * @date : 2022-09-22 15:12
+ * @date : 2022-09-25 17:04
  * @version : 1.0
  **/
 package com.jbr.domain.pojo;
 
-import com.jbr.domain.entity.Carpet;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,14 +14,11 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RequestObj {
-    private int page;
-    private Date entrytime;
-    private int id;
-    private String name;
+public class OrderList {
+    private Date selltime;
     private String batch;
-    private Double price;
-    private String region;
+    private String name;
     private String type;
-    private String state;
+    private double price;
+
 }

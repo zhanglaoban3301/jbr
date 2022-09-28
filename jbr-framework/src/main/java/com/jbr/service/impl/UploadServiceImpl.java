@@ -39,11 +39,11 @@ public class UploadServiceImpl implements UploadService {
 
     @Override
     public boolean deleteImg(String pathName) {
-        System.out.println("path"+pathName);
+
         boolean flag = false;
         //根据路径创建文件对象
         File file = new File(pathName);
-        System.out.println("file:::"+file);
+
         //路径是个文件且不为空时删除文件
         if(file.isFile()&&file.exists()){
             flag = file.delete();
