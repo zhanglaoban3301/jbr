@@ -95,6 +95,7 @@ public class UploadUtil {
             urlMap.put("target",fileDownloadUri);
         }
         //返回Url地址，以逗号分隔
+        System.out.println(urlMap);
         return urlMap;
     }
 

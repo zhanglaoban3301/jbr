@@ -44,6 +44,9 @@ public class CaptchaController {
         System.out.println("验证码内容：" + text);
         //将验证码文本内容放入session
         request.getSession().setAttribute("captcha", text);
+
+        String a =(String)request.getSession().getAttribute("captcha");
+
         //根据文本验证码内容创建图形验证码
         BufferedImage image = defaultKaptcha.createImage(text);
         ServletOutputStream outputStream = null;

@@ -56,6 +56,7 @@ public class UserServiceImpl implements UserService {
     public RespBean login(String username, String password, String code,HttpServletRequest request) {
 
         String captcha = (String)request.getSession().getAttribute("captcha");
+
         if(code == null || !captcha.equalsIgnoreCase(code)){
             return RespBean.error("验证码输入错误,请重新输入");
         }
